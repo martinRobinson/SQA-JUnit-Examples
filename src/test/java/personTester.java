@@ -9,4 +9,9 @@ public class personTester {
     public void testGetAge(){
         assertEquals(21, testDummy.getAgeInYears());
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testSetAgeInYearsTooSmallByThrownException() {
+        testDummy.setAgeInYears(-1);
+    }
 }
