@@ -31,4 +31,20 @@ public class personTester {
 	public void testSetAgeInYearsTooBigByThrownException() {
 		testDummy.setAgeInYears(131);
 	}
+
+	@Test
+	public void testCorrectFirstName() {
+		testDummy.setFirstName("Joe");
+		assertEquals("Joe", testDummy.getName());
+	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void testFirstNameWithNumber() {
+		testDummy.setFirstName("Jose4ph");
+	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void testFirstNameWithPunctuation() {
+		testDummy.setFirstName("Jose-ph");
+	}
 }
