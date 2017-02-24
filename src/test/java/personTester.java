@@ -6,8 +6,20 @@ public class personTester {
 	private person testDummy = new person("Joe", "Bloggs", 21);
 
 	@Test
-	public void testGetAge() {
+	public void testGetAgeTypical() {
 		assertEquals(21, testDummy.getAgeInYears());
+	}
+
+	@Test
+	public void testGetAgeVeryOld() {
+		testDummy.setAgeInYears(129);
+		assertEquals(129, testDummy.getAgeInYears());
+	}
+
+	@Test
+	public void testGetAgeTypicalJustBorn() {
+		testDummy.setAgeInYears(0);
+		assertEquals(0, testDummy.getAgeInYears());
 	}
 
 	@Test(expected = IllegalArgumentException.class)
