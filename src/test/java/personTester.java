@@ -47,4 +47,32 @@ public class personTester {
 	public void testFirstNameWithPunctuation() {
 		testDummy.setFirstName("Jose-ph");
 	}
+
+	@Test
+	public void testCorrectLastName() {
+		testDummy.setLastName("Bloggs");
+		assertEquals("Bloggs", testDummy.getLastName());
+	}
+
+	@Test
+	public void testCorrectHyphenatedLastName() {
+		testDummy.setLastName("Von-Trapp");
+		assertEquals("Von-Trapp", testDummy.getLastName());
+	}
+
+	@Test
+	public void testDoubleHyphenatedLastName() {
+		testDummy.setLastName("Sax-Coburg-Windsor");
+		assertEquals("Sax-Coburg-Windsor", testDummy.getLastName());
+	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void testLastNameWithNumber() {
+		testDummy.setLastName("Bl0ggs");
+	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void testLastNameWithPunctuation() {
+		testDummy.setLastName("Sax-Coburg_Windsor");
+	}
 }
