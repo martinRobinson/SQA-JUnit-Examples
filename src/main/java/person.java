@@ -32,7 +32,6 @@ public class person {
 	}
 
 	public void setLastName(String lastName) {
-		;
 		if (validateLastName(lastName) == true) {
 			this.lastName = lastName;
 		} else

@@ -66,6 +66,12 @@ public class personTester {
 		assertEquals("Sax-Coburg-Windsor", testDummy.getLastName());
 	}
 
+	@Test
+	public void testTripleHyphenatedLastName() {
+		testDummy.setLastName("Sax-Coburg-Windsor-Gothburg");
+		assertEquals("Sax-Coburg-Windsor-Gothburg", testDummy.getLastName());
+	}
+
 	@Test(expected = IllegalArgumentException.class)
 	public void testLastNameWithNumber() {
 		testDummy.setLastName("Bl0ggs");
