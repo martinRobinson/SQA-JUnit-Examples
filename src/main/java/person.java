@@ -16,7 +16,7 @@ public class person {
 
 	// validate first name
 	public static boolean validateFirstName(String firstName) {
-		return firstName.matches("[A-Z][a-zA-Z]*");
+		return firstName.matches("[a-zA-z]+([ '-][a-zA-Z]+)*");
 	}
 
 	// validate last name

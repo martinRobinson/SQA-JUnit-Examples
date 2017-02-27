@@ -55,11 +55,7 @@ public class personTester {
 		assertEquals("Jean-Paul", testDummy.getFirstName());
 	}
 
-	@Test(expected = IllegalArgumentException.class)
-	public void testFirstNameWithPunctuation() {
-		testDummy.setFirstName("Jose-ph");
-	}
-
+	
 	@Test
 	public void testCorrectLastName() {
 		testDummy.setLastName("Bloggs");
