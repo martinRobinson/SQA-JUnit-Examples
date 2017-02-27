@@ -50,7 +50,7 @@ public class person {
 		return ageYears;
 	}
 
-	public String getName() {
+	public String getFirstName() {
 		return firstName;
 	}
 

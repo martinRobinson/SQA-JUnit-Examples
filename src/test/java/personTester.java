@@ -41,12 +41,18 @@ public class personTester {
 	@Test
 	public void testCorrectFirstName() {
 		testDummy.setFirstName("Joe");
-		assertEquals("Joe", testDummy.getName());
+		assertEquals("Joe", testDummy.getFirstName());
 	}
 
 	@Test(expected = IllegalArgumentException.class)
 	public void testFirstNameWithNumber() {
 		testDummy.setFirstName("Jose4ph");
+	}
+	
+	@Test 
+	public void testHypenatedFirstName(){
+		testDummy.setFirstName("Jean-Paul");
+		assertEquals("Jean-Paul", testDummy.getFirstName());
 	}
 
 	@Test(expected = IllegalArgumentException.class)
