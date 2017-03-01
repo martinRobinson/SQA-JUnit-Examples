@@ -15,7 +15,7 @@ public class personTester {
 		testDummy.setAgeInYears(100);
 		assertEquals(100, testDummy.getAgeInYears());
 	}
-	
+
 	@Test
 	public void testGetAgeVeryOld() {
 		testDummy.setAgeInYears(129);
@@ -48,14 +48,13 @@ public class personTester {
 	public void testFirstNameWithNumber() {
 		testDummy.setFirstName("Jose4ph");
 	}
-	
-	@Test 
-	public void testHypenatedFirstName(){
-		testDummy.setFirstName("Jean-Paul");
-		assertEquals("Jean-Paul", testDummy.getFirstName());
+
+	@Test
+	public void testHypenatedFirstName() {
+		testDummy.setFirstName("Michel-Paul");
+		assertEquals("Michel-Paul", testDummy.getFirstName());
 	}
 
-	
 	@Test
 	public void testCorrectLastName() {
 		testDummy.setLastName("Bloggs");
