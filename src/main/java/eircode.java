@@ -1,10 +1,18 @@
 
 public class eircode {
 	private String eircode = null;
+	private String candidateEircode = null; 
 	
 	public eircode(String inputEircode) {
 		super();
-		this.eircode = generateCanonicalEircode(inputEircode);
+		
+		candidateEircode = generateCanonicalEircode(inputEircode);
+		
+		if (candidateEircode.length() < 7)
+			throw new IllegalArgumentException("Input eircode too short: " + candidateEircode.length());
+		
+		if (candidateEircode.length() > 7)
+			throw new IllegalArgumentException("Input eircode too long: " + candidateEircode.length());
 	}
 
 	
