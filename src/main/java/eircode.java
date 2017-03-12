@@ -1,32 +1,32 @@
 
 public class eircode {
 	private String eircode = null;
-	private String candidateEircode = null; 
-	
+	private String candidateEircode = null;
+
 	public eircode(String inputEircode) {
 		super();
-		
+
 		candidateEircode = generateCanonicalEircode(inputEircode);
-		
+
 		if (candidateEircode.length() < 7)
 			throw new IllegalArgumentException("Input eircode too short: " + candidateEircode.length());
-		
+
 		if (candidateEircode.length() > 7)
 			throw new IllegalArgumentException("Input eircode too long: " + candidateEircode.length());
+		this.eircode = candidateEircode;
 	}
 
-	
 	@Override
 	public String toString() {
 		return "eircode [eircode=" + eircode + "]";
 	}
-	
 
-	private String generateCanonicalEircode(String nonCanonicalEircode){
-		String CanonicalEircode = nonCanonicalEircode.replaceAll("\\s+","");
+	private String generateCanonicalEircode(String nonCanonicalEircode) {
+		String CanonicalEircode = nonCanonicalEircode.replaceAll("\\s+", "");
 		CanonicalEircode = CanonicalEircode.toUpperCase();
 		return CanonicalEircode;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -34,7 +34,6 @@ public class eircode {
 		result = prime * result + ((eircode == null) ? 0 : eircode.hashCode());
 		return result;
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -53,7 +52,6 @@ public class eircode {
 		return true;
 	}
 
-
 	public String getEircode() {
 		return eircode;
 	}
@@ -62,4 +60,3 @@ public class eircode {
 		this.eircode = eircode;
 	}
 }
-
