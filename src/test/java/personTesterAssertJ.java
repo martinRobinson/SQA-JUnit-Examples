@@ -19,4 +19,9 @@ public class personTesterAssertJ {
 	public void testCorrectLastName() {
 		assertThat(testDummy.getLastName()).isEqualTo("Bloggs");
 	}
+
+	@Test
+	public void testAggregatePropertiesPerson() {
+		assertThat(testDummy.getAgeInYears()).as("Check %s's age ", testDummy.getFirstName()).isEqualTo(21);
+	}
 }
