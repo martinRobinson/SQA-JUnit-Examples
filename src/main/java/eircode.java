@@ -10,8 +10,7 @@ public class eircode {
 
 		if (candidateEircode.length() < 7)
 			throw new IllegalArgumentException("Input eircode too short: " + candidateEircode.length());
-
-		if (candidateEircode.length() > 7)
+		else if (candidateEircode.length() > 7)
 			throw new IllegalArgumentException("Input eircode too long: " + candidateEircode.length());
 		this.eircode = candidateEircode;
 	}

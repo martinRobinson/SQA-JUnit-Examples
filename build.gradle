@@ -10,6 +10,8 @@
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
 apply plugin: 'jacoco'
+apply plugin: 'eclipse'
+
 
 version = '0.0.1'
 sourceCompatibility = 1.8
@@ -40,6 +42,9 @@ dependencies {
     
     // Added to show the use of the assertJ testing framework.
     testCompile 'org.assertj:assertj-core:3.6.2'
+    
+    // For mock object testing...
+    testCompile "org.mockito:mockito-core:2.0.57-beta"
 }
 
 
