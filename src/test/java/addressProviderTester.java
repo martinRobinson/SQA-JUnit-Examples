@@ -1,3 +1,4 @@
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
@@ -36,7 +37,7 @@ public class addressProviderTester {
 	}
 
 	@Test
-	public void testMockedValidAddressProvider() {
+	public void testCountryInProvidedAddress() {
 
 		address testAddress = testProvider.getAddress(sampleEircode1);
 
@@ -44,4 +45,35 @@ public class addressProviderTester {
 		assertThat(testAddress.getCountry(), is(equalTo("Ireland")));
 	}
 
+	@Test
+	public void testCompleteAddress() {
+		address testAddress = testProvider.getAddress(sampleEircode1);
+
+		// Do the test, hamcrest matching.
+		assertThat(testAddress, is(equalTo(sampleAddress1)));
+	}
+
+	@Test
+	public void testCompleteAddress2() {
+		address testAddress = testProvider.getAddress(sampleEircode1);
+
+		// Do the test, attribute by attribute using AssertJ matching.
+		assertThat(testAddress).isEqualToComparingFieldByField(sampleAddress1);
+	}
+
+	@Test
+	public void testCompleteAddress3() {
+		address testAddress = testProvider.getAddress(sampleEircode1);
+
+		// Do the test, attribute by attribute using AssertJ matching.
+		assertThat(testAddress).isEqualToComparingOnlyGivenFields(sampleAddress1, "country");
+	}
+
+	@Test
+	public void testCompleteAddress4() {
+		address testAddress = testProvider.getAddress(sampleEircode2);
+
+		// Do the test, attribute by attribute using AssertJ matching.
+		assertThat(testAddress).hasFieldOrPropertyWithValue("streetName", "Kildare Street");
+	}
 }
