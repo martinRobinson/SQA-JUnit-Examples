@@ -7,11 +7,11 @@
 // superficial behaviour. 
 public class addressProvider {
 
-	public addressProvider(eircode input) {
+	public addressProvider() {
 
 	}
 
-	public address getAddress() {
+	public address getAddress(eircode input) {
 		return null;
 	}
 
